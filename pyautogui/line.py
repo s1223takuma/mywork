@@ -9,10 +9,10 @@ def alarm():
     time.sleep(5)
     auto.click(262,168)
     auto.click(716,653)
-    for i in range(10):
-        time.sleep(0.5)
+    for i in range(150):
+        time.sleep(0.1)
         auto.click(808,222)
-schedule.every().day.at("03:29").do(alarm)
+schedule.every().day.at("08:00").do(alarm)
 while True:
     schedule.run_pending()
     time.sleep(60)
