@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  django-db:
+    image: "mysql:5.7"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root"
+      - "MYSQL_DATABASE=mysitedb"
+      - "MYSQL_USER=mysitedbuser"
+      - "MYSQL_PASSWORD=mysitedbpassword"
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysqldata:/var/lib/mysql
