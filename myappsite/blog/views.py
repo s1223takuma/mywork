@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.models import User
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView,LogoutView
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 def index(request):
@@ -26,3 +27,11 @@ class AccountLoginView(LoginView):
     template_name = "blog/login.html"
     def get_default_redirect_url(self):
         return "/blog"
+    
+class MypageView(LoginRequiredMixin,View):
+    login_url = "/blog/login"
+    def get(self, request):
+        return render(request, "blog/mypage.html")
+    
+class AccountLogoutView(LogoutView):
+    template_name = 'blog/logout.html'
