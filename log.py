@@ -7,7 +7,6 @@ from Quartz import (
     kCGNullWindowID
 )
 import datetime
-import time
 import os
 import pyautogui as pag
 
@@ -41,7 +40,6 @@ def main():
                     pag.keyDown("command")
                     pag.press("w")
                     pag.keyUp("command")
-                    activeWindowTitle = "勉強しろバーカ"
                 print(activeWindowTitle,dt_now.strftime('%H:%M:%S') + "  " + str(dt_now.date()))
                 bufWindowTitle = activeWindowTitle
                 if os.path.exists("log/log"+str(dt_now.date())+".txt") == "False":
