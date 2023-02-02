@@ -1,4 +1,6 @@
 from selenium import webdriver
+import datetime
+import time
 from selenium.webdriver.common.by import By
 browser = webdriver.Firefox()
 browser.get("https://slack.com/intl/ja-jp/get-started#/createnew")
