@@ -36,7 +36,7 @@ def main():
             global activeWindowTitle
             activeWindowTitle = getActiveWindowTitle()
             if bufWindowTitle != activeWindowTitle:
-                if "YouTube" in activeWindowTitle or "Twitter" in activeWindowTitle or "Discord" in activeWindowTitle:
+                if "youtube" in activeWindowTitle or "YouTube" in activeWindowTitle or "Twitter" in activeWindowTitle or "Discord" in activeWindowTitle:
                     pag.keyDown("command")
                     pag.press("w")
                     pag.keyUp("command")
